@@ -1,2 +1,1 @@
-Git is a version control system.
-Git is free software.
+matchSerialinfo4 is a device serial port information reading tool developed in Python language. It can achieve basic serial port reading and writing and is used in conjunction with regular expressions.
