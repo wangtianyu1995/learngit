@@ -68,12 +68,6 @@ def Recompile(csqstr,copsstr,iccidstr,hcsqstr,pppnum):
     HCSQResult = HCSQPattern.findall(hcsqstr)
     ICCIDResult = ICCIDPattern.findall(iccidstr)
     HCSQTDResult=HCSQTDPattern.findall(hcsqstr)
-    #print(pppnum)
-    #print(csqstr)
-    #print(copsstr)
-    #print(iccidstr)
-    #print (hcsqstr)
-    #if cops or iccid one of them is match faild ,will not write serialinfofile
     jsondict={'CSQ': '','COPS':'','ICCID':'','HCSQ':''}
     if len(CSQResult):
         csqtime=GetTime(CSQResult)
@@ -113,7 +107,7 @@ def KeyWordFilter(nlines,keyword):
 
 
 def main(num):
-    RCV_LOG = r"/home/butel/4GAssembler/com/out%s"%num
+    RCV_LOG = r"out%s"%num
     nlines = get_last_n_lines(RCV_LOG, "100")
     csqstr = KeyWordFilter(nlines, "+CSQ")
     copsstr = KeyWordFilter(nlines, "COPS")
@@ -131,11 +125,11 @@ if __name__ == '__main__':
 
     while True:
         #IF out file is exist
-        if  os.path.exists('/home/butel/4GAssembler/com/out2')==True:
+        if  os.path.exists('out2')==True:
             main(2)
-        if  os.path.exists('/home/butel/4GAssembler/com/out7')==True:
+        if  os.path.exists('out7')==True:
             main(7)
-        if  os.path.exists('/home/butel/4GAssembler/com/out12')==True:
+        if  os.path.exists('out12')==True:
             main(12)
         time.sleep(1)
 
