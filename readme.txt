@@ -1,1 +1,3 @@
-matchSerialinfo4 is a device serial port information reading tool developed in Python language. It can achieve basic serial port reading and writing and is used in conjunction with regular expressions.
+1.对接华为通信模块，从指定文件最后一百行指定时间，读写串口数据。
+2.对数据进行正则匹配，过滤出指定信息
+3.增加文件锁，防止文件读写冲突
